@@ -52,3 +52,27 @@ function checkDriverAge(age) {
 }
 
 var anArray = ["first", "second", ["third", 4], "fifth"];
+
+var pulsatilla = {
+	colors : ["purple", "white", "red"],
+	propagation : "seed",
+	hardiness : true,
+	minimumTemperature : -40
+}
+
+var helleborus = {
+	colors : ["burgundy", "white", "pink", "green", "mixed"],
+	propagation : "division",
+	hardiness : true,
+	minimumTemperature : -30,
+}
+
+var dionaea = {
+	colors : ["red", "green", "red"],
+	propagation : ["seed", "division", "leaf propagation"],
+	hardiness : false,
+	minimumTemperature : 5
+}
+
+var plants = [pulsatilla, helleborus, dionaea];
+console.log(plants);
