@@ -50,3 +50,5 @@ function checkDriverAge(age) {
 		return "Congratulations on your first year of driving. Enjoy the ride!";
 	}
 }
+
+var anArray = ["first", "second", ["third", 4], "fifth"];
