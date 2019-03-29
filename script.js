@@ -57,7 +57,10 @@ var pulsatilla = {
 	colors : ["purple", "white", "red"],
 	propagation : "seed",
 	hardiness : true,
-	minimumTemperature : -40
+	minimumTemperature : -40,
+	sprout : function() {
+		console.log("You have a new pulsatilla \u{1F331}!");
+	}
 }
 
 var helleborus = {
@@ -65,13 +68,19 @@ var helleborus = {
 	propagation : "division",
 	hardiness : true,
 	minimumTemperature : -30,
+	sprout : function() {
+		console.log("You have a new helleborus \u{1F331}!");
+	}
 }
 
 var dionaea = {
 	colors : ["red", "green", "red"],
 	propagation : ["seed", "division", "leaf propagation"],
 	hardiness : false,
-	minimumTemperature : 5
+	minimumTemperature : 5,
+	sprout : function() {
+		console.log("You have a new dionaea \u{1F331}!");
+	}
 }
 
 var plants = [pulsatilla, helleborus, dionaea];
