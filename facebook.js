@@ -55,6 +55,11 @@ function login(anUser, aPass){
 		for (var i = 0; i < newsfeed.length; i++){
 			console.log(newsfeed[i].timeline[0].post + "\n");
 		}	
+		console.log("forEach: ");
+		newsfeed.forEach(function(newsfeedItem){
+			console.log(newsfeedItem.timeline[newsfeedItem.timeline.length - 1].post + " ");
+
+		});
 	}
 	else {
 		console.log("Username or password incorrect!");
