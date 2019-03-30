@@ -56,8 +56,9 @@ function login(anUser, aPass){
 			console.log(newsfeed[i].timeline[0].post + "\n");
 		}	
 		console.log("forEach: ");
-		newsfeed.forEach(function(newsfeedItem){
-			console.log(newsfeedItem.timeline[newsfeedItem.timeline.length - 1].post + " ");
+		newsfeed.forEach(function(newsfeedItem, i){
+			console.log(i + " " + 
+				newsfeedItem.timeline[newsfeedItem.timeline.length - 1].post + " ");
 
 		});
 	}
