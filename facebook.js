@@ -56,15 +56,16 @@ function login(anUser, aPass){
 			console.log(newsfeed[i].timeline[0].post + "\n");
 		}	
 		console.log("forEach: ");
-		newsfeed.forEach(function(newsfeedItem, i){
-			console.log(i + " " + 
-				newsfeedItem.timeline[newsfeedItem.timeline.length - 1].post + " ");
-
-		});
+		newsfeed.forEach(logToDo);
 	}
 	else {
 		console.log("Username or password incorrect!");
 	}
 }
 
+function logToDo(newsfeedItem, i){
+			console.log(i + " " + 
+				newsfeedItem.timeline[newsfeedItem.timeline.length - 1].post + " ");
+
+		}
 login(user, pass);
