@@ -1,3 +1,5 @@
+var button = document.getElementsByTagName("button")[0];
+
 var database = [
 				{
 					username: "george",
@@ -55,8 +57,10 @@ var newsfeed = [
 	}
 ];
 
-var user = prompt("Username: ");
-var pass = prompt("Password: ");
+
+
+
+
 
 function isValidUser(anUser, aPass){
 		for (var i = 0; i < database.length; i++){
@@ -67,19 +71,22 @@ function isValidUser(anUser, aPass){
 		return false;
 }
 
-function login(anUser, aPass){
-	if (isValidUser(anUser, aPass)){	
-		console.log ("Hi, " + anUser + "!\n");	
-		newsfeed.forEach(logToDo);
+function login(){
+	var user = prompt("Username: ");
+	var pass = prompt("Password: ");
+	if (isValidUser(user, pass)){	
+		document.writeln ("Hi, " + user + "!\n");	
+		newsfeed.forEach(logTimelineItems);
 	}
 	else {
 		console.log("Username or password incorrect!");
 	}
 }
 
-function logToDo(newsfeedItem, i){
-			console.log(i + " " + 
-				newsfeedItem.timeline[newsfeedItem.timeline.length - 1].post + " "); //last post
-
+button.addEventListener("click", login);
+function logTimelineItems(newsfeedItem, i){
+			// console.log(i + " " + 
+			// 	newsfeedItem.timeline[newsfeedItem.timeline.length - 1].post + " "); //last post
+			document.writeln(newsfeedItem.timeline[newsfeedItem.timeline.length - 1].post + " ");
 		}
-login(user, pass);
+
