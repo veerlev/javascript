@@ -1,9 +1,18 @@
-var username = {
-	username: "george",
-	password: "georgehasapass",
-};
+var database = [
+				{
+					username: "george",
+					password: "georgehasapass",
+				},
+				{
+					username: "anne",
+					password: "123",
+				},
+				{
+					username: "justin",
+					password: "jpass",
+				}
+];
 
-var database = [username];
 var newsfeed = [
 	{
 		username: "anotherUser",
@@ -49,13 +58,18 @@ var newsfeed = [
 var user = prompt("Username: ");
 var pass = prompt("Password: ");
 
+function isValidUser(anUser, aPass){
+		for (var i = 0; i < database.length; i++){
+			if ((database[i].username === anUser) && database[i].password === aPass){
+				return true;
+			}
+		}
+		return false;
+}
+
 function login(anUser, aPass){
-	if ((anUser === username.username) && (aPass === username.password)){	
-		console.log ("Hi, " + anUser + "!\n");
-		for (var i = 0; i < newsfeed.length; i++){
-			console.log(newsfeed[i].timeline[0].post + "\n");
-		}	
-		console.log("forEach: ");
+	if (isValidUser(anUser, aPass)){	
+		console.log ("Hi, " + anUser + "!\n");	
 		newsfeed.forEach(logToDo);
 	}
 	else {
@@ -65,7 +79,7 @@ function login(anUser, aPass){
 
 function logToDo(newsfeedItem, i){
 			console.log(i + " " + 
-				newsfeedItem.timeline[newsfeedItem.timeline.length - 1].post + " ");
+				newsfeedItem.timeline[newsfeedItem.timeline.length - 1].post + " "); //last post
 
 		}
 login(user, pass);
