@@ -148,3 +148,15 @@ function frankenSplice(arr1, arr2, n) {
 }
 
 frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+function bouncer(arr) {
+  let newArr = [];
+  for (let item of arr){
+    if (item) {
+      newArr.push(item);
+    }
+  }
+  return newArr;
+}
+
+bouncer([7, "ate", "", false, 9]);
