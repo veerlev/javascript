@@ -63,3 +63,19 @@ function confirmEnding(str, target) {
 }
 
 confirmEnding("Bastian", "n");
+
+function repeatStringNumTimes(str, num) {
+  let newStr = "";
+  if (num < 1) {
+    return newStr;
+  }
+  
+  while (num >= 1){
+    newStr += str;
+    num--;
+  }
+  str = newStr;
+  return str;
+}
+
+repeatStringNumTimes("abc", 3);
