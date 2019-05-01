@@ -3,8 +3,7 @@ function reverseString(str) {
   for (let i = str.length-1; i >= 0; i--){
     reversed += str[i];
   }
-  str = reversed;
-  return str;
+  return reversed;
 }
 
 reverseString("hello");
@@ -58,7 +57,6 @@ largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 85
 
 function confirmEnding(str, target) {
   let regex = new RegExp(target + "$");
-
   return regex.test(str);
 }
 
@@ -74,8 +72,7 @@ function repeatStringNumTimes(str, num) {
     newStr += str;
     num--;
   }
-  str = newStr;
-  return str;
+  return newStr;
 }
 
 repeatStringNumTimes("abc", 3);
@@ -131,8 +128,7 @@ function titleCase(str) {
       }       
       i++;
   }
-  str = newStr;
-  return str;
+  return newStr;
 }
 
 titleCase("I'm a little tea pot");
