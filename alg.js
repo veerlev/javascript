@@ -40,3 +40,18 @@ function findLongestWordLength(str) {
 }
 
 findLongestWordLength("The quick brown fox jumped over the lazy dog");
+
+function largestOfFour(arr) {
+  let maxArr = [Number.NEGATIVE_INFINITY, Number.NEGATIVE_INFINITY, Number.NEGATIVE_INFINITY, Number.NEGATIVE_INFINITY];
+  let secondDimension = 4;
+  for (let i = 0; i < arr[0].length; i++){
+    for (let j = 0; j < secondDimension; j++){
+        if (arr[j][i] > maxArr[j]) {
+          maxArr[j] = arr[j][i];
+        }
+    }   
+  }
+  return maxArr;
+}
+
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
