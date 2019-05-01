@@ -104,3 +104,35 @@ function booWho(bool) {
 }
 
 booWho(null);
+
+
+
+function titleCase(str) {
+  
+  let newStr = "";
+  str = str.toLowerCase();
+  let regex = /[a-z]/;
+  let regex2 = /[a-z]|'/;
+  if (regex.test(str[0])){
+    newStr += str[0].toUpperCase();
+  }
+  let i = 1;
+  let changeCase = false;
+  while (i < str.length){
+      let character = str[i];
+      if (changeCase){
+        newStr += character.toUpperCase();
+        changeCase = false;
+      } else {
+        newStr += character;      }
+      
+      if (!regex2.test(character)){
+        changeCase = true;
+      }       
+      i++;
+  }
+  str = newStr;
+  return str;
+}
+
+titleCase("I'm a little tea pot");
