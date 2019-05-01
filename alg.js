@@ -136,3 +136,15 @@ function titleCase(str) {
 }
 
 titleCase("I'm a little tea pot");
+
+
+function frankenSplice(arr1, arr2, n) {
+  // It's alive. It's alive!
+  let result = arr2.slice(0, n);
+  result.push(...arr1);
+  result.push(...arr2.slice(n, arr2.length));
+  console.log(result);
+  return result;
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
