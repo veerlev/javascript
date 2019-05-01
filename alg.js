@@ -169,3 +169,19 @@ function getIndexToIns(arr, num) {
 }
 
 getIndexToIns([10, 20, 30, 40, 50], 30);
+
+function mutation(arr) {
+  let sum = 0;
+  let regex = /[a-z]/;
+  let str1 = arr[0].toLowerCase();
+  let str2 = arr[1].toLowerCase();
+  for (let i = 0; i < str2.length; i++){
+    let character = str2[i];
+    if (regex.test(character) && !str1.includes(character)){
+      return false;
+    }
+  }
+  return true;
+}
+
+mutation(["hello", "hey"]);
