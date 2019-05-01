@@ -156,3 +156,16 @@ function bouncer(arr) {
 }
 
 bouncer([7, "ate", "", false, 9]);
+
+function getIndexToIns(arr, num) {
+  // Find my place in this sorted array.
+  let position = 0;
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i] < num) {
+      position++;
+    }
+  }
+  return position;
+}
+
+getIndexToIns([10, 20, 30, 40, 50], 30);
