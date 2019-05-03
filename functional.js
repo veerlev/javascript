@@ -163,7 +163,13 @@ var rating = watchList.map((item) => {return { title: item.Title, rating: item.i
 });
 var filteredList = watchList.filter(item => item.imdbRating >= 8.0).map((item) =>{return {title: item.Title, rating: item.imdbRating}});
 
-
+var averageRating = watchList.reduce((sum, item, index, array) => {
+  if (item.Director === "Christopher Nolan"){
+    sum[0] += Number(item.imdbRating);
+    sum[1]++;
+  }
+  return index < array.length  - 1 ? sum : sum[0] / sum[1];
+}, [0,0]);
 // Add your code above this line
 
 console.log(rating); 
@@ -214,3 +220,4 @@ return anim.slice(beginSlice, endSlice);
 }
 var inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
 sliceArray(inputAnim, 1, 3);
+
