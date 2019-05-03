@@ -16,9 +16,10 @@ var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Movi
 // New parameters should come before the bookName one
 
 // Add your code below this line
-function add (bookName) {
-  
-  return bookList.push(bookName);
+function add (bookList, bookName) {
+  let aList = [...bookList];
+  aList.push(bookName);
+  return aList;
   
   // Add your code above this line
 }
@@ -27,17 +28,17 @@ function add (bookName) {
 // New parameters should come before the bookName one
 
 // Add your code below this line
-function remove (bookName) {
-  if (bookList.indexOf(bookName) >= 0) {
-    
-    return bookList.splice(0, 1, bookName);
-    
+function remove (bookList, bookName) {
+ let aList = [];
+ for (let i = 0; i < bookList.length; i++){
+   if (bookList[i] !== bookName){
+     aList.push(bookList[i]);
+   }    
+ }
+   return aList;
     // Add your code above this line
-    }
 }
 
 var newBookList = add(bookList, 'A Brief History of Time');
 var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
 var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
-
-console.log(bookList);
