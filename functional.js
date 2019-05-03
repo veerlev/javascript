@@ -221,3 +221,11 @@ return anim.slice(beginSlice, endSlice);
 var inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
 sliceArray(inputAnim, 1, 3);
 
+var globalArray = [5, 6, 3, 2, 9];
+function nonMutatingSort(arr) {
+  // Add your code below this line
+  return globalArray.concat([]).sort((a, b) => a - b);  
+  // Add your code above this line
+}
+
+nonMutatingSort(globalArray);
