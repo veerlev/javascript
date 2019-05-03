@@ -165,3 +165,22 @@ var rating = watchList.map((item) => {return { title: item.Title, rating: item.i
 // Add your code above this line
 
 console.log(rating); 
+
+
+// the global Array
+var s = [23, 65, 98, 5];
+
+Array.prototype.myMap = function(callback){
+  var newArray = [];
+  // Add your code below this line
+  for (let i = 0; i < s.length; i++){
+    newArray.push(callback(s[i]));
+  }
+  // Add your code above this line
+  return newArray;
+
+};
+
+var new_s = s.myMap(function(item){
+  return item * 2;
+});
