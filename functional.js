@@ -209,10 +209,7 @@ var new_s = s.myFilter(function(item){
 
 function sliceArray(anim, beginSlice, endSlice) {
   // Add your code below this line
-  let mySlice = [...anim];
-  mySlice = mySlice.slice(beginSlice, endSlice);
-  console.log(mySlice);
-  return mySlice;
+return anim.slice(beginSlice, endSlice);
   // Add your code above this line
 }
 var inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
