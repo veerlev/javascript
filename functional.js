@@ -161,6 +161,8 @@ var watchList = [
 // Add your code below this line
 var rating = watchList.map((item) => {return { title: item.Title, rating: item.imdbRating }
 });
+var filteredList = watchList.filter(item => item.imdbRating >= 8.0).map((item) =>{return {title: item.Title, rating: item.imdbRating}});
+
 
 // Add your code above this line
 
