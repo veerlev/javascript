@@ -238,3 +238,17 @@ function sentensify(str) {
   // Add your code above this line
 }
 sentensify("May-the-force-be-with-you");
+
+
+// the global variable
+var globalTitle = "Winter Is Coming";
+
+// Add your code below this line
+function urlSlug(title) {
+    let slug = title.split(/\s+/).join("-").toLowerCase();
+ return slug[0] === '-'? slug.slice(1) : slug;
+  
+}
+// Add your code above this line
+
+var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
