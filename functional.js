@@ -312,3 +312,26 @@ function destroyer(arr) {
 }
 
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+function whatIsInAName(collection, source) {
+  // What's in a name?
+  var arr = [];
+  // Only change code below this line
+  arr.push(...collection.filter(item =>{
+    let matches = true;
+    for (let property in source){      
+      if (item.hasOwnProperty(property)){
+        if (item[property] !== source[property]){
+          matches = false;
+        }             
+      } else {
+        matches = false;
+      }
+    }
+    return matches;
+  }));
+  // Only change code above this line
+  return arr;
+} 
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
