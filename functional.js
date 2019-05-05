@@ -289,3 +289,14 @@ function sumAll(arr) {
 }
 
 sumAll([10, 5]);
+
+
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  // Same, same; but different.
+  newArr.push(...arr1.filter(x => !arr2.includes(x)));
+  newArr.push(...arr2.filter(x => !arr1.includes(x)));
+  return newArr;
+}
+
+console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
