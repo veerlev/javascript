@@ -381,3 +381,14 @@ function translatePigLatin(str) {
 
 translatePigLatin("consonant");
 
+function myReplace(str, before, after) {
+  let start = str.indexOf(before);
+  let end = start + before.length;
+  if (/[A-Z]/.test(str[start])) {
+    after = after[0].toUpperCase() + after.slice(1);
+  }
+  return str.slice(0, start) + after + str.slice(end);
+  
+}
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
