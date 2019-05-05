@@ -280,3 +280,12 @@ function add(x) {
   // Add your code above this line
 }
 add(10)(20)(30);
+
+
+function sumAll(arr) {
+  let min = arr[0] < arr[1] ? arr[0] : arr[1];
+  let max = arr[0] > arr[1] ? arr[0] : arr[1];
+  return (max * (max + 1) - (min - 1) * min) / 2;
+}
+
+sumAll([10, 5]);
