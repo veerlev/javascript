@@ -297,12 +297,7 @@ function diffArray(arr1, arr2) {
   newArr.push(...arr1.filter(x => !arr2.includes(x)));
   newArr.push(...arr2.filter(x => !arr1.includes(x)));
   return newArr;
-}function destroyer(arr) {
-  let values = [...arguments];  
- return values.reduce((values, value) => values.filter(x => x!= value)); // Remove all te values
 }
-
-destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 
 console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 
