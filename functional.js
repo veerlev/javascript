@@ -359,3 +359,25 @@ function spinalCase(str) {
 }
 
 console.log(spinalCase('This Is Spinal Tap'));
+
+function translatePigLatin(str) {
+  let vowelsRegex = /[aeiou]/;
+  let suffix = "";
+  let word = "";
+  if (vowelsRegex.test(str[0])){
+     suffix = "way"; 
+     word += str; 
+  } else {
+    let i = 0;
+    while ((i < str.length) && (!vowelsRegex.test(str[i]))){
+      suffix += str[i];
+      i++;
+    }
+    suffix += "ay";
+    word = str.slice(i);
+  }
+  return word + suffix;
+}
+
+translatePigLatin("consonant");
+
