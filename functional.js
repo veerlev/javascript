@@ -454,3 +454,25 @@ function convertHTML(str) {
 }
 
 convertHTML("Dolce & Gabbana");
+
+
+function sumFibs(num) {
+  if (num < 3) {
+    return num < 2? 1 : 2;
+  }
+  let sum = 2;
+  let fib1 = 1;
+  let fib2 = 1;
+  let fib = fib1 + fib2;
+  while (fib <= num) {
+    if (fib % 2 !== 0) {
+      sum += fib;
+    }
+    fib1 = fib2;
+    fib2 = fib;
+    fib = fib1 + fib2;
+  }
+  return sum;
+}
+
+sumFibs(4);
