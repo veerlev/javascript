@@ -335,3 +335,27 @@ function whatIsInAName(collection, source) {
 } 
 
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+
+
+function spinalCase(str) {
+  // "It's such a fine line between stupid, and clever."
+  // --David St. Hubbins
+  let spinalString = "";
+  let regex = /[^A-Za-z]+/;
+  let firstCharacter = str[0];
+  if (!regex.test(firstCharacter)){
+    spinalString += /[A-Z]/.test(firstCharacter) 
+                  ? firstCharacter.toLowerCase()
+                  : firstCharacter;
+  } 
+  for (let i = 1; i < str.length; i++){
+    if (/[A-Z]/.test(str[i])) {
+      spinalString += " ";
+    }
+    spinalString += str[i];
+  } 
+  spinalString = spinalString.split(regex).join("-").toLowerCase();  
+  return spinalString;
+}
+
+console.log(spinalCase('This Is Spinal Tap'));
