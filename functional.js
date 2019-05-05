@@ -435,3 +435,22 @@ function uniteUnique(arr) {
 }
 
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+
+function convertHTML(str) {
+  // &colon;&rpar;
+  let converted = "";
+  for (let i = 0; i < str.length; i++){
+    switch(str[i]){
+      case '&': converted +="&amp;"; break;
+      case '<': converted +="&lt;"; break;
+      case '>': converted +="&gt;"; break;
+      case '"': converted +="&quot;"; break;
+      case "'": converted +="&apos;"; break;
+      default: converted += str[i];
+    }
+  }
+  return converted;
+}
+
+convertHTML("Dolce & Gabbana");
