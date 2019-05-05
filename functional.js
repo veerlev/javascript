@@ -421,3 +421,17 @@ function fearNotLetter(str) {
 }
 
 fearNotLetter("abce");
+
+function uniteUnique(arr) {
+  let arrays = [...arguments];
+  for (let i = 1; i < arrays.length; i++){
+    for (let j = 0; j < arrays[i].length; j++){
+      if (!arr.includes(arrays[i][j])){
+        arr.push(arrays[i][j]);
+      }
+    }
+  }
+  return arr;
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
