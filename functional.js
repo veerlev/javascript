@@ -410,3 +410,19 @@ function pairElement(str) {
 }
 
 pairElement("GCG");
+
+function fearNotLetter(str) {
+  let allPresent = str.charCodeAt(str.length - 1) - str.charCodeAt(0) === str.length -1;
+  if (allPresent) {
+    return undefined;
+  } else {
+    for (let i = 1; i < str.length; i++){
+      if (str.charCodeAt(i) - str.charCodeAt(i - 1) !== 1){
+        return String.fromCharCode(str.charCodeAt(i - 1) + 1);
+      }
+    }
+    return "a";
+  }
+}
+
+fearNotLetter("abce");
