@@ -392,3 +392,21 @@ function myReplace(str, before, after) {
 }
 
 myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+
+
+function pairElement(str) {
+  let dna = [];
+  for (let i = 0; i < str.length; i++){
+    let pair = [str[i]];
+    switch (str[i]){
+      case 'A': pair.push('T'); break;
+      case 'C': pair.push('G'); break;
+      case 'G': pair.push('C'); break;
+      case 'T': pair.push('A'); break;
+    }
+    dna.push(pair);
+  }
+  return dna;
+}
+
+pairElement("GCG");
