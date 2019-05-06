@@ -550,3 +550,14 @@ function smallestCommons(arr) {
 
 
 smallestCommons([23, 18]);
+
+function dropElements(arr, func) {
+  // Drop them elements.
+  let position = 0;
+  while (!func(arr[position])){
+    position++;
+  }
+  return arr.slice(position);
+}
+
+dropElements([1, 2, 3], function(n) {return n < 3; });
