@@ -599,3 +599,25 @@ function truthCheck(collection, pre) {
 }
 
 truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+
+function addTogether() {
+  let args = [...arguments];
+  if (args.length === 2){
+    if (typeof args[0] !== "number" || typeof args[1] !== "number"){
+      return undefined;
+    } else {
+      return args[0] + args[1];
+    }
+  }else {
+     if (typeof args[0] !== "number") {
+        return undefined;
+      }
+     return (x => (typeof x !== "number") || 
+     (typeof args[0] !== "number") 
+     ? undefined
+      : x + args[0]);     
+  }
+   
+}
+
+addTogether(2,3);
