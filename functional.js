@@ -497,3 +497,19 @@ function sumPrimes(num) {
 }
 
 sumPrimes(10);
+
+function greatestCommons(arr) {
+  let first = arr[0] < arr[1] ? arr[0] : arr[1];
+  let second = arr[0] > arr[1] ? arr[0] : arr[1];
+  /*12 8 */
+  while (first !== 0) {
+    let remainder = second % first;
+    second = first;
+    first = remainder;
+  }
+  console.log(second);
+  return second;
+}
+
+
+greatestCommons([143,65]);
