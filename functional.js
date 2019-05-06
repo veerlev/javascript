@@ -513,3 +513,40 @@ function greatestCommons(arr) {
 
 
 greatestCommons([143,65]);
+
+
+function smallestCommons(arr) {
+  let first = arr[0] < arr[1] ? arr[0] : arr[1];
+  let second = arr[0] > arr[1] ? arr[0] : arr[1];
+  let multiple = 1;
+  let numbers = [];
+  for (let i = first; i <= second; i++){
+    numbers.push(i);
+  }
+  let divisors = []; //array containing the powers of the prime divisors
+  for (let i = 0; i <= second; i++){
+    divisors.push(0);
+  }
+  for (let i = 0; i <= numbers.length; i++){ //for every number in the range
+    for (let j = 2; j <= numbers[i]; j++){ //for every possible divisor
+      let power = 0;
+      while(numbers[i] % j === 0){ //if it divides the number, count the times
+        power++;
+        numbers[i] /= j;
+      }
+      if (power > divisors[j]){ //if the divisor has a greater exponent than 
+        divisors[j] = power; //what was remembered before, retain current exponent
+      }
+    }
+  }
+  for (let i = 2; i < divisors.length; i++){
+    while(divisors[i] > 0){
+      multiple *= i;
+      divisors[i]--;
+    }
+  }
+  return multiple;
+}
+
+
+smallestCommons([23, 18]);
