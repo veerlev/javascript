@@ -561,3 +561,18 @@ function dropElements(arr, func) {
 }
 
 dropElements([1, 2, 3], function(n) {return n < 3; });
+
+function steamrollArray(arr) {
+  // I'm a steamroller, baby
+  let flat = [];
+  for (let i = 0; i < arr.length; i++){
+    if (Array.isArray(arr[i])){
+      flat = flat.concat(steamrollArray(arr[i]));
+    } else {
+      flat.push(arr[i]);
+    }
+  }
+  return flat;
+}
+
+console.log(steamrollArray([1, [2], [3, [[4]]]]));
