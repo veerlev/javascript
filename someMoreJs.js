@@ -652,3 +652,17 @@ var Person = function(firstAndLast) {
 
 var bob = new Person('Bob Ross');
 bob.getFullName();
+
+function orbitalPeriod(arr) {
+  var GM = 398600.4418;
+  var earthRadius = 6367.4447;
+  let newArr = [];
+  for (let item of arr){
+    let orbitalPeriod = Math.round(2 * Math.PI 
+    * Math.sqrt(Math.pow(earthRadius + item.avgAlt,3)/GM));
+    newArr.push({name:item.name, orbitalPeriod: orbitalPeriod});
+  }
+  return newArr;
+}
+
+orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
