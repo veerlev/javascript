@@ -26,9 +26,12 @@ One-hundred Dollars	$100 (ONE HUNDRED)
 */
 
 function checkCashRegister(price, cash, cid) {
-  var change;
+  let state = {
+    change: 0.0,
+    status: "CLOSED"
+  }
   // Here is your change, ma'am.
-  return change;
+  return state;
 }
 
 // Example cash-in-drawer array:
