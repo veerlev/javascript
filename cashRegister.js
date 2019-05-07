@@ -34,6 +34,9 @@ function checkCashRegister(price, cash, cid) {
    let registerAmount = cid.reduce((total, coin) => total + coin[1], 0);
   if (changeAmount > registerAmount) {
     state.status = "INSUFFICIENT_FUNDS";
+  } else if (changeAmount === registerAmount) {
+    state.status = "CLOSED";
+    state.change.push(...cid);
   }
   // Here is your change, ma'am.
   return state;
