@@ -30,7 +30,7 @@ function checkCashRegister(price, cash, cid) {
     change: [],
     status: "CLOSED"
   }
-  state.change = cash - price;
+  let changeAmount = cash - price;
   // Here is your change, ma'am.
   return state;
 }
