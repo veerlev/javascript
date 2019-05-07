@@ -27,9 +27,10 @@ One-hundred Dollars	$100 (ONE HUNDRED)
 
 function checkCashRegister(price, cash, cid) {
   let state = {
-    change: 0.0,
+    change: [],
     status: "CLOSED"
   }
+  state.change = cash - price;
   // Here is your change, ma'am.
   return state;
 }
