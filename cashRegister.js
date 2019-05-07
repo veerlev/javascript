@@ -37,6 +37,29 @@ function checkCashRegister(price, cash, cid) {
   } else if (changeAmount === registerAmount) {
     state.status = "CLOSED";
     state.change.push(...cid);
+  }  else {
+    let register = cid.map(item => item[1]);
+    let values = [0.01, 0.05, 0.1, 0.25, 1.00, 5.00, 10.00, 20.00, 100.00];
+    for (let i = register.length - 1; i >= 0; i--){
+      let amount = 0;
+      while (changeAmount >= values[i] && register[i] > 0){
+        changeAmount = parseFloat(changeAmount - values[i]).toPrecision(5);
+        amount += values[i];
+        register[i] -= values[i];
+      }
+      if (amount > 0) {
+        state.change.push([cid[i][0], amount]);
+      }
+      if (changeAmount === 0) {
+        break;
+      }
+    }
+    if (changeAmount - 0.000000001 < 0.001) {
+      state.status = "OPEN";
+    } else {
+      state.status = "INSUFFICIENT_FUNDS";
+      state.change = [];
+    }
   }
   // Here is your change, ma'am.
   return state;
